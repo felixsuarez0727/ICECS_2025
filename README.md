@@ -19,27 +19,31 @@ This project implements an advanced radar signal classification system with Neur
 ## Project Structure
 
 ```
+├── microcontroller/
+│   ├── convert_model.py       # Convert Keras → TFLite and generate C header (model.h)
+│   ├── model.tflite           # Generated TFLite model (example)
+│   └── model.h                # C array with the TFLite model (example)
 ├── scripts/
-│   ├── analyze_hdf5.py        # Script for analyzing HDF5 datasets
+│   ├── analyze_hdf5.py        # Analyze HDF5 datasets (distribution, shapes, memory estimation)
 │   └── nas_search.py          # Script for running neural architecture search
 ├── src/
-│   ├── __init__.py            # Package initialization
-│   ├── data_loader.py         # Enhanced data loading and preprocessing
-│   ├── model.py               # TensorFlow model with attention mechanisms
-│   ├── model_alternative.py   # Scikit-learn Random Forest model
-│   ├── model_nas.py           # Neural Architecture Search implementation
-│   ├── nas/
-│   │   ├── __init__.py        # NAS package initialization
-│   │   ├── search_space.py    # Define search spaces for NAS
-│   │   ├── strategies.py      # Implementation of search strategies
-│   │   └── utils.py           # Utilities for NAS
-│   ├── train.py               # Training and evaluation utilities
-│   └── utils.py               # Visualization and other utilities
+│   ├── __init__.py
+│   ├── data_loader.py         # Loading and preprocessing (spectrogram); option to group AM as AM_combined
+│   ├── model.py               # Base CNN classifier with regularization/anti-overfitting
+│   ├── model_nas.py           # NAS wrapper and hypermodel construction
+│   ├── train.py               # Training utilities and NAS flow via trainer
+│   ├── utils.py               # Visualization and general utilities
+│   └── nas/
+│       ├── __init__.py
+│       ├── search_space.py    # Search spaces: default/small/large/am_pulsed
+│       ├── strategies.py      # Random/Bayesian/Hyperband strategies (Keras Tuner)
+│       └── utils.py           # NAS utilities (plot_model, comparisons, analysis)
 ├── logging.conf               # Logging configuration
-├── main.py                    # Main entry point for training
+├── run_main_nas.py            # Simple NAS runner (Keras Tuner) using base DataLoader; defaults to results2/nas
 ├── nas_main.py                # Main entry point for NAS
+├── recover_best_model.py      # Rebuilds and saves the best model from a specific trial
 ├── requirements.txt           # Project dependencies
-└── run_simple_nas.py          # Simplified version of NAS that will work with our data
+└── README.md
 ```
 
 ## Installation
