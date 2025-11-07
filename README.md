@@ -2,6 +2,21 @@
 
 This project implements an advanced radar signal classification system with Neural Architecture Search (NAS) capabilities. It's specifically designed to distinguish between different types of radar signals, with special attention to differentiating between AM and PULSED signals.
 
+## Index
+1. [Features](#features)
+2. [Project Structure](#project-structure)
+3. [Installation](#installation)
+4. [Usage](#usage)
+   - [Run the NAS search with the following command:](#run-the-nas-search-with-the-following-command)
+   - [Running Neural Architecture Search](#running-neural-architecture-search)
+   - [Training with the Best Found Architecture](#training-with-the-best-found-architecture)
+   - [Analyzing an HDF5 Dataset](#analyzing-an-hdf5-dataset)
+5. [Configuration](#configuration)
+6. [Results](#results)
+7. [Model Recovery](#model-recovery)
+8. [Contributing](#contributing)
+9. [License](#license)
+
 ## Features
 
 - **Enhanced Data Handling**: Advanced preprocessing of radar signal data with spectrograms, wavelet transforms, and specialized features
