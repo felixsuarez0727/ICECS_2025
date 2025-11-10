@@ -1,4 +1,4 @@
-# Enhanced Radar Signal Classification with Neural Architecture Search V3
+# Enhanced Radar Signal Classification with Neural Architecture Search
 
 This project implements an advanced radar signal classification system with Neural Architecture Search (NAS) capabilities. It's specifically designed to distinguish between different types of radar signals, with special attention to differentiating between AM and PULSED signals.
 
