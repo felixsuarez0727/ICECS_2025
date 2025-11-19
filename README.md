@@ -148,7 +148,7 @@ This will:
 1. First, install Docker in your system.
 2. Run this script on terminal `docker build -r radar-nas .`
 3. Download the ["Over the air version" dataset](https://www.androcs.com/uploads/RadComOta2.45GHz.zip)
-4. Unzip the file in determined path like `c:/datasets`. This path is where the dataset is stored
+4. Unzip the file in determined path like `c:/datasets`. This path is where the dataset is stored.
 5. Create folder `c:/radar-results`. This path is where the output from the container will be saved.
 5. Run this code on terminal to set the code in motion:
 
