@@ -13,9 +13,10 @@ This project implements an advanced radar signal classification system with Neur
    - [Analyzing an HDF5 Dataset](#analyzing-an-hdf5-dataset)
 5. [Configuration](#configuration)
 6. [Results](#results)
-7. [Model Recovery](#model-recovery)
-8. [Contributing](#contributing)
-9. [License](#license)
+7. [Model Recovery](#model-on-recovery)
+8. [Run on Docker](#run-on-docker)
+9. [Contributing](#contributing)
+10. [License](#license)
 
 ## Features
 
@@ -103,6 +104,13 @@ python scripts/analyze_hdf5.py --file path/to/dataset.h5 --output results/analys
     --analyze_signals --plot_examples
 ```
 
+### Main Instruction
+Use this instruction for running all the program at once, this runs the three actions before documented:
+```bash
+  python run_main_nas.py --dataset c:/datasets/RadComOta2.45GHz.hdf5 --samples 5000 --combine_am --trials 20 --epochs 30 --batch_size 32 --strategy bayesian --use_attention --use_residual --augment_data
+```
+
+
 ## Configuration
 
 The search spaces for NAS can be configured in `src/nas/search_space.py`. The following hyperparameters can be tuned:
@@ -135,6 +143,36 @@ This will:
 1. Load the best model from the checkpoints
 2. Save it as `best_simple_model.h5`
 3. Display the model summary
+
+## Run on Docker
+1. First, install Docker in your system.
+2. Run this script on terminal `docker build -r radar-nas .`
+3. Download the ["Over the air version" dataset](https://www.androcs.com/uploads/RadComOta2.45GHz.zip)
+4. Unzip the file in determined path like `c:/datasets`. This path is where the dataset is stored
+5. Create folder `c:/radar-results`. This path is where the output from the container will be saved.
+5. Run this code on terminal to set the code in motion:
+
+```bash
+  docker run --rm -it `
+    -v c:/datasets:/datasets `
+    -v c:/radar-results:/app/results2 `
+    radar-nas `
+    python run_main_nas.py `
+        --dataset /datasets/RadComOta2.45GHz.hdf5 `
+        --samples 5000 `
+        --combine_am `
+        --trials 20 `
+        --epochs 30 `
+        --batch_size 32 `
+        --strategy bayesian `
+        --use_attention `
+        --use_residual `
+        --augment_data
+```
+6. Please wait until the process is complete.
+7. Please check `c:/radar-results` to find the generated data.
+
+![Radar Results folder](pictures/radar_results.jpg)
 
 ## Contributing
 
