@@ -75,6 +75,12 @@ This project implements an advanced radar signal classification system with Neur
    pip install -r requirements.txt
    ```
 
+3. Windows Users: If you encounter UTF-8 encoding errors, enable UTF-8 support:
+   - Press `Win + R`, type `intl.cpl`, and press Enter
+   - Go to the **Administrative** tab → **Change system locale**
+   - Check: **"Beta: Use Unicode UTF-8 for worldwide language support"**
+   - Restart your computer
+
 ## Usage
 
 ### Run the NAS search with the following command:

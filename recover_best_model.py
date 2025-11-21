@@ -7,7 +7,7 @@ from src.data_loader import DataLoader
 import run_main_nas
 
 # Path to the dataset used in the experiment
-DATASET_PATH = '/Users/jaimearevalo/Downloads/RadComOta2.45GHz.hdf5'
+DATASET_PATH = '/Users/felixsuarez/Downloads/RadComOta2.45GHz.hdf5'
 
 # Load data to get input_shape and num_classes
 loader = DataLoader(DATASET_PATH, combine_am=True, samples_per_class=5000)
