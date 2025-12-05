@@ -1,5 +1,14 @@
 # Enhanced Radar Signal Classification with Neural Architecture Search
 
+<div align="center">
+  <img src="pictures/R_logo.png" alt="Gobierno de España" height="50" style="margin-right:10px;" />
+  <img src="pictures/UE_logo.png" alt="Unión Europea" height="50" style="margin-right:10px;" />
+  <img src="pictures/Doraito_logo.png" alt="Doraito" height="50" style="margin-right:10px;" />
+  <img src="pictures/IMSE_logo.png" alt="IMSE-CNM" height="50" style="margin-right:10px;" />
+  <img src="pictures/CSIC_logo.png" alt="CSIC" height="50" style="margin-right:10px;" />
+  <img src="pictures/CSIC_blue_logo.png" alt="CSIC blue" height="50" />
+</div>
+
 This project implements an advanced radar signal classification system with Neural Architecture Search (NAS) capabilities. It's specifically designed to distinguish between different types of radar signals, with special attention to differentiating between AM and PULSED signals.
 
 ## Index
